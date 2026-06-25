@@ -1,7 +1,7 @@
-# cw32l010-pac
+# cw32l012-pac
 
 Peripheral access crate for the CW32L012 microcontroller, generated from the
-CW32L010 SVD.
+CW32L012 SVD.
 
 ## Blinky example
 
