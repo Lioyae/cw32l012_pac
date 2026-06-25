@@ -1,0 +1,8 @@
+[build] 
+target = "thumbv6m-none-eabi"
+
+[target.thumbv6m-none-eabi]
+runner = "probe-rs run --chip CW32L012x8 --protocol swd"
+rustflags = [
+    "-C", "link-args=-Tlink.x"
+]

@@ -1,0 +1,126 @@
+#[doc = "Register `HSE` reader"]
+pub type R = crate::R<HseSpec>;
+#[doc = "Register `HSE` writer"]
+pub type W = crate::W<HseSpec>;
+#[doc = "Field `DRIVER` reader - desc DRIVER"]
+pub type DriverR = crate::FieldReader;
+#[doc = "Field `DRIVER` writer - desc DRIVER"]
+pub type DriverW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+#[doc = "Field `WAITCYCLE` reader - desc WAITCYCLE"]
+pub type WaitcycleR = crate::FieldReader;
+#[doc = "Field `WAITCYCLE` writer - desc WAITCYCLE"]
+pub type WaitcycleW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+#[doc = "Field `MODE` reader - desc MODE"]
+pub type ModeR = crate::BitReader;
+#[doc = "Field `MODE` writer - desc MODE"]
+pub type ModeW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `HEXENPOL` reader - desc HEXENPOL"]
+pub type HexenpolR = crate::BitReader;
+#[doc = "Field `HEXENPOL` writer - desc HEXENPOL"]
+pub type HexenpolW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `DETCNT` reader - desc DETCNT"]
+pub type DetcntR = crate::FieldReader<u16>;
+#[doc = "Field `DETCNT` writer - desc DETCNT"]
+pub type DetcntW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
+#[doc = "Field `STABLE` reader - desc STABLE"]
+pub type StableR = crate::BitReader;
+#[doc = "Field `PDRIVER` reader - desc PDRIVER"]
+pub type PdriverR = crate::FieldReader;
+#[doc = "Field `PDRIVER` writer - desc PDRIVER"]
+pub type PdriverW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+#[doc = "Field `DIGFLT` reader - desc DIGFLT"]
+pub type DigfltR = crate::BitReader;
+#[doc = "Field `DIGFLT` writer - desc DIGFLT"]
+pub type DigfltW<'a, REG> = crate::BitWriter<'a, REG>;
+impl R {
+    #[doc = "Bits 0:3 - desc DRIVER"]
+    #[inline(always)]
+    pub fn driver(&self) -> DriverR {
+        DriverR::new((self.bits & 0x0f) as u8)
+    }
+    #[doc = "Bits 4:5 - desc WAITCYCLE"]
+    #[inline(always)]
+    pub fn waitcycle(&self) -> WaitcycleR {
+        WaitcycleR::new(((self.bits >> 4) & 3) as u8)
+    }
+    #[doc = "Bit 6 - desc MODE"]
+    #[inline(always)]
+    pub fn mode(&self) -> ModeR {
+        ModeR::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - desc HEXENPOL"]
+    #[inline(always)]
+    pub fn hexenpol(&self) -> HexenpolR {
+        HexenpolR::new(((self.bits >> 7) & 1) != 0)
+    }
+    #[doc = "Bits 8:18 - desc DETCNT"]
+    #[inline(always)]
+    pub fn detcnt(&self) -> DetcntR {
+        DetcntR::new(((self.bits >> 8) & 0x07ff) as u16)
+    }
+    #[doc = "Bit 19 - desc STABLE"]
+    #[inline(always)]
+    pub fn stable(&self) -> StableR {
+        StableR::new(((self.bits >> 19) & 1) != 0)
+    }
+    #[doc = "Bits 20:23 - desc PDRIVER"]
+    #[inline(always)]
+    pub fn pdriver(&self) -> PdriverR {
+        PdriverR::new(((self.bits >> 20) & 0x0f) as u8)
+    }
+    #[doc = "Bit 24 - desc DIGFLT"]
+    #[inline(always)]
+    pub fn digflt(&self) -> DigfltR {
+        DigfltR::new(((self.bits >> 24) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bits 0:3 - desc DRIVER"]
+    #[inline(always)]
+    pub fn driver(&mut self) -> DriverW<'_, HseSpec> {
+        DriverW::new(self, 0)
+    }
+    #[doc = "Bits 4:5 - desc WAITCYCLE"]
+    #[inline(always)]
+    pub fn waitcycle(&mut self) -> WaitcycleW<'_, HseSpec> {
+        WaitcycleW::new(self, 4)
+    }
+    #[doc = "Bit 6 - desc MODE"]
+    #[inline(always)]
+    pub fn mode(&mut self) -> ModeW<'_, HseSpec> {
+        ModeW::new(self, 6)
+    }
+    #[doc = "Bit 7 - desc HEXENPOL"]
+    #[inline(always)]
+    pub fn hexenpol(&mut self) -> HexenpolW<'_, HseSpec> {
+        HexenpolW::new(self, 7)
+    }
+    #[doc = "Bits 8:18 - desc DETCNT"]
+    #[inline(always)]
+    pub fn detcnt(&mut self) -> DetcntW<'_, HseSpec> {
+        DetcntW::new(self, 8)
+    }
+    #[doc = "Bits 20:23 - desc PDRIVER"]
+    #[inline(always)]
+    pub fn pdriver(&mut self) -> PdriverW<'_, HseSpec> {
+        PdriverW::new(self, 20)
+    }
+    #[doc = "Bit 24 - desc DIGFLT"]
+    #[inline(always)]
+    pub fn digflt(&mut self) -> DigfltW<'_, HseSpec> {
+        DigfltW::new(self, 24)
+    }
+}
+#[doc = "desc HSE\n\nYou can [`read`](crate::Reg::read) this register and get [`hse::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hse::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct HseSpec;
+impl crate::RegisterSpec for HseSpec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`hse::R`](R) reader structure"]
+impl crate::Readable for HseSpec {}
+#[doc = "`write(|w| ..)` method takes [`hse::W`](W) writer structure"]
+impl crate::Writable for HseSpec {
+    type Safety = crate::Unsafe;
+}
+#[doc = "`reset()` method sets HSE to value 0"]
+impl crate::Resettable for HseSpec {}
