@@ -6,7 +6,7 @@ description = "Peripheral access crate for the CW32L012 microcontroller."
 repository = "https://github.com/Lioyae/cw32l012-pac"
 readme = "README.md"
 license = "MIT OR Apache-2.0"
-keywords = ["cw32", "cw32l010", "pac", "embedded", "no-std"]
+keywords = ["cw32", "cw32l012", "pac", "embedded", "no-std"]
 categories = ["embedded", "hardware-support", "no-std"]
 
 [dependencies]
