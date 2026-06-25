@@ -1,6 +1,6 @@
 [package]
 name = "cw32l012_pac"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Peripheral access crate for the CW32L012 microcontroller."
 repository = "https://github.com/Lioyae/cw32l012-pac"
